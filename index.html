@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+  <title>Quiz do Milhão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app">
+    <section id="login-tela" class="login-card glass">
+      <div class="logo-mark">Q<span>✦</span></div>
+      <p class="eyebrow">DESAFIO DE CONHECIMENTO</p>
+      <h1>QUIZ <span>DO MILHÃO</span></h1>
+      <p class="intro">50 perguntas. Conhecimento vale milhões.</p>
+      <form id="login-form">
+        <label for="nome-jogador">Como podemos te chamar?</label>
+        <input id="nome-jogador" type="text" maxlength="24" placeholder="Digite seu nome" autocomplete="nickname" required>
+        <button class="primary-button" type="submit">ENTRAR NO DESAFIO <span>→</span></button>
+      </form>
+      <div class="login-footer"><span>◈</span> 50 perguntas <span>◈</span> Ensino Médio <span>◈</span> Até R$ 1.000.000</div>
+    </section>
+
+    <section id="jogo-tela" class="game-layout hidden">
+      <header class="topbar glass">
+        <div class="brand"><div class="mini-logo">Q</div><div><strong>QUIZ DO MILHÃO</strong><small id="boas-vindas">Boa sorte!</small></div></div>
+        <div class="top-actions"><button id="som-btn" class="icon-button" aria-label="Ativar ou desativar sons" title="Sons">♫ <span id="som-status">Som ligado</span></button><button id="sair-btn" class="icon-button" title="Sair do jogo">↗ Sair</button></div>
+      </header>
+
+      <div class="game-grid">
+        <section class="quiz-panel glass">
+          <div class="quiz-meta"><span id="categoria" class="category-pill">CONHECIMENTOS GERAIS</span><span id="numero-pergunta">PERGUNTA 1 / 50</span></div>
+          <div class="progress-track"><div id="progresso" class="progress-fill"></div></div>
+          <div class="question-wrap">
+            <div class="question-icon">?</div>
+            <h2 id="pergunta">Preparando o desafio...</h2>
+          </div>
+          <div id="alternativas" class="alternatives"></div>
+          <p id="mensagem" class="message" aria-live="polite"></p>
+          <button id="proxima" class="primary-button next-button" disabled>PRÓXIMA PERGUNTA <span>→</span></button>
+        </section>
+
+        <aside class="side-panel">
+          <section class="money-card glass">
+            <p class="eyebrow">PRÊMIO ACUMULADO</p>
+            <div id="premio" class="money-value">R$ 0</div>
+            <div class="money-sub">de R$ 1.000.000</div>
+            <div class="money-track"><div id="dinheiro-progresso"></div></div>
+            <div class="money-bottom"><span>Seu progresso</span><strong id="percentual">0%</strong></div>
+          </section>
+          <section class="lifelines glass">
+            <p class="eyebrow">AJUDAS DISPONÍVEIS</p>
+            <button id="dobrar-btn" class="lifeline"><span class="life-icon">×2</span><span><strong>Dobrar dinheiro</strong><small>Dobre seu prêmio atual</small></span><b>↗</b></button>
+            <button id="pular-btn" class="lifeline"><span class="life-icon">»</span><span><strong>Pular pergunta</strong><small>Avance sem responder</small></span><b>↗</b></button>
+            <button id="eliminar-btn" class="lifeline"><span class="life-icon">½</span><span><strong>Eliminar duas</strong><small>Remova duas alternativas</small></span><b>↗</b></button>
+            <button id="desistir-btn" class="quit-button">⚑ &nbsp; Desistir e guardar prêmio</button>
+          </section>
+          <section class="tip-card"><span class="tip-star">✦</span><p><strong>Dica do desafio</strong><br>Leia com atenção e confie no que você estudou. Boa sorte!</p></section>
+        </aside>
+      </div>
+      <footer class="game-footer"><span>QUIZ DO MILHÃO</span><span>Conhecimento é poder <b>✦</b></span></footer>
+    </section>
+
+    <section id="resultado-tela" class="result-card glass hidden">
+      <div class="result-orb">✦</div>
+      <p class="eyebrow">DESAFIO CONCLUÍDO</p>
+      <h1 id="resultado-titulo">Mandou bem!</h1>
+      <p id="resultado-mensagem" class="result-message"></p>
+      <div class="final-money-label">PRÊMIO FINAL</div>
+      <div id="premio-final" class="final-money">R$ 0</div>
+      <div class="stats-grid"><div><strong id="acertos-final">0</strong><span>Acertos</span></div><div><strong id="perguntas-final">0/50</strong><span>Perguntas vistas</span></div><div><strong id="aproveitamento-final">0%</strong><span>Aproveitamento</span></div></div>
+      <button id="reiniciar-btn" class="primary-button">JOGAR NOVAMENTE <span>↻</span></button>
+      <button id="trocar-jogador-btn" class="text-button">Trocar jogador</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
